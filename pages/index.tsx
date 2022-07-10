@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <SearchInput query={query} setQuery={setQuery} />
+      <SearchInput setQuery={setQuery} />
       <div className='relative h-screen overflow-auto mt-28' onScroll={handleScroll}>
         {!query && data && data.pages ? (
           <Hero
