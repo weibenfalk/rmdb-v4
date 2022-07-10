@@ -13,11 +13,11 @@ type Props = {
 };
 
 const Card = ({ movieId, imgUrl, title, clickable }: Props) => (
-  <div className='relative h-72 hover:opacity-80 cursor-pointer duration-300'>
+  <div className='relative h-80 hover:opacity-80 cursor-pointer duration-300'>
     <Link href={clickable ? `/${movieId}` : ''}>
       <div className="relative w-full h-full">
         <Thumb imgUrl={imgUrl} />
-        <div className='absolute w-full bottom-0 p-2 rounded-b-md bg-gradient-to-b from-transparent to-black'>
+        <div className='absolute w-full bottom-0 p-2 rounded-b-xl bg-gradient-to-b from-transparent to-black'>
           <h2 className='text-cyan-200 text-center text-sm truncate'>{title}</h2>
         </div>
       </div>
