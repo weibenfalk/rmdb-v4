@@ -15,7 +15,7 @@ type Props = {
 const Card = ({ movieId, imgUrl, title, clickable }: Props) => (
   <div className='relative h-72 hover:opacity-80 cursor-pointer duration-300'>
     <Link href={clickable ? `/${movieId}` : ''}>
-      <div>
+      <div className="relative w-full h-full">
         <Thumb imgUrl={imgUrl} />
         <div className='absolute w-full bottom-0 p-2 rounded-b-md bg-gradient-to-b from-transparent to-black'>
           <h2 className='text-cyan-200 text-center text-sm truncate'>{title}</h2>

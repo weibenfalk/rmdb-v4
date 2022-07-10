@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Thumb = ({ imgUrl }: Props) => (
-  <Image className='rounded-md' layout='fill' objectFit='cover' src={imgUrl} alt='thumb' />
+  <Image priority className='rounded-md' layout='fill' objectFit='cover' src={imgUrl} alt='thumb' />
 );
 
 export default Thumb;

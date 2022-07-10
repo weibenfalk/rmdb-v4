@@ -1,18 +1,13 @@
-import { SEARCH_BASE_URL, POPULAR_BASE_URL, API_URL, API_KEY } from '../config';
+import { API_URL, API_KEY } from '../config';
 // Types
 import type { Movies, Movie, Credits } from './types';
 
+const dev = process.env.NODE_ENV !== 'production';
+export const server = dev ? 'http://localhost:3000' : 'https://your_deployment.server.com';
+
 // Fetch functions
-export const fetchMovies = async (searchTerm = "", page = 1): Promise<Movies> => {
-  const endpoint: string = searchTerm
-    ? `${SEARCH_BASE_URL}${searchTerm}&page=${page}`
-    : `${POPULAR_BASE_URL}&page=${page}`;
-
-  const response = await fetch(endpoint);
-
-  if (!response.ok) throw new Error("Error in response from server.");
-
-  return await response.json();
+export const fetchMovies = async (search = "", page = 1): Promise<Movies> => {
+  return await (await fetch(`${server}/api/movies?search=${search}&page=${page}`)).json();
 };
 
 export const fetchMovie = async (movieId: number): Promise<Movie> => {

@@ -4,7 +4,11 @@ module.exports = {
     gridTemplateColumns: {
       'auto-fill': 'repeat(auto-fill, minmax(200px, 1fr))'
     },
-    extend: {}
+    extend: {
+      height: {
+        128: '32rem'
+      }
+    }
   },
   plugins: []
 };
