@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Hero = ({ imgUrl, title, text }: Props) => (
-  <div className='relative w-full p-4 h-128 mt-28'>
+  <div className='relative w-full p-4 h-128 mt-20'>
     <div className='flex flex-col-reverse relative h-full max-w-7xl m-auto z-10 pb-12 text-center md:text-left'>
       <div className="text-white max-w-xl">
         <h2 className="text-4xl pb-8">{title}</h2>
