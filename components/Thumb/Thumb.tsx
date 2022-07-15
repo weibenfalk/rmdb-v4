@@ -1,4 +1,3 @@
-import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 // Types
 type Props = {
@@ -6,7 +5,16 @@ type Props = {
 };
 
 const Thumb = ({ imgUrl }: Props) => (
-  <Image priority className='rounded-xl' layout='fill' objectFit='cover' src={imgUrl} alt='thumb' />
+  <Image
+    priority
+    placeholder='blur'
+    blurDataURL='/placeholder.jpg'
+    className='rounded-lg'
+    layout='fill'
+    objectFit='cover'
+    src={imgUrl}
+    alt='thumb'
+  />
 );
 
 export default Thumb;

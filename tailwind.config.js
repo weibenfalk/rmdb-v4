@@ -6,8 +6,14 @@ module.exports = {
     },
     extend: {
       height: {
-        128: '34rem'
+        128: '40rem'
       }
+    },
+    fontFamily: {
+      raleway: ['Raleway', 'sans-serif']
+    },
+    minHeight: {
+      '128': '40rem',
     }
   },
   plugins: []

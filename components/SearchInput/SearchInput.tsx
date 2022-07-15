@@ -1,7 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-// Images
-import searchIcon from '../../public/search-icon.svg';
 
 type Props = {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
@@ -24,20 +21,13 @@ const SearchInput = ({ setQuery }: Props) => {
   };
 
   return (
-    <div className='fixed z-20 w-full bg-slate-800 h-auto'>
-      <div className='relative'>
-        <div className='absolute top-4 left-28'>
-          <Image width='25' height='25' src={searchIcon} alt='search-icon' />
-        </div>
-        <input
-          className='block h-14 max-w-7xl m-auto my-4 box-border w-full rounded-full p-4 pl-12 text-xl bg-slate-700 text-white'
-          type='text'
-          placeholder='Search Movie'
-          value={text}
-          onChange={handleInput}
-        />
-      </div>
-    </div>
+    <input
+      className='focus:outline-none focus:border-solid focus:border focus:border-cyan-200 h-10 md:w-96 rounded-full p-4 text-md bg-zinc-700 text-white transition-all pointer-events-auto'
+      type='text'
+      placeholder='Search Movie'
+      value={text}
+      onChange={handleInput}
+    />
   );
 };
 

@@ -2,6 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 // API URLs
 import { SEARCH_BASE_URL, POPULAR_BASE_URL } from '../../config';
+// Basic fetch
+import { basicFetch } from '../../api/fetchFunctions';
 // Types
 import { Movies } from '../../api/types';
 
@@ -10,9 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   const endpoint: string = search ? `${SEARCH_BASE_URL}${search}&page=${page}` : `${POPULAR_BASE_URL}&page=${page}`;
 
-  const response = await fetch(endpoint);
+  const data = await basicFetch<Movies>(endpoint);
 
-  if (!response.ok) throw new Error('Error!');
-
-  res.status(200).json(await response.json());
+  res.status(200).json(data);
 }
