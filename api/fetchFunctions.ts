@@ -2,7 +2,7 @@
 import type { Movies } from './types';
 
 const dev = process.env.NODE_ENV !== 'production';
-export const server = dev ? 'http://localhost:3000' : 'https://your_deployment.server.com';
+export const server = dev ? 'http://localhost:3000' : 'https://react-movie-db-v4.vercel.app/';
 
 // As we're in a .ts file we can just use <returnType>. But if this was a .tsx file we have to
 // use <returnType, >
